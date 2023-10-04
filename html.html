@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tap'Taupe</title>
+        <link rel="stylesheet" href="css.css">
+        <script src="js.js" defer></script>
+    </head>
+
+    <body onmousemove="cursor(event.pageX, event.pageY)">
+        <aside>Score : <span id="score">0</span></aside>
+
+        <main>
+            <div id="game" onclick="wrong_click()">
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(0); event.stopPropagation()">
+                </div>
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(1); event.stopPropagation()">
+                </div>
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(2); event.stopPropagation()">
+                </div>
+
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(3); event.stopPropagation()">
+                </div>
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(4); event.stopPropagation()">
+                </div>
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(5); event.stopPropagation()">
+                </div>
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(6); event.stopPropagation()">
+                </div>
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(7); event.stopPropagation()">
+                </div>
+
+                <div>
+                    <img class="mound" src="mound.png" alt="monticule de terre">
+                    <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(8); event.stopPropagation()">
+                </div>
+            </div>
+            <img src="hammer.png" id="cursor" style="top:0; left:0">
+        </main>
+    </body>
+</html>

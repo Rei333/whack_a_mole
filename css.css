@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ae8b5f;
+    font-family: Arial;
+    margin: 0 20px;
+    gap: 20px;
+    cursor: none;
+}
+
+aside {
+    background-color: #00000080;
+    border-radius: 0 0 25px 25px;
+    padding: 5px 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+main {
+    background-image: url("bg.jpg");
+    width: 100%;
+    height: 85vh;
+    border: solid black 5px;
+    border-radius: 25px;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: end;
+    padding: 20px;
+    height: 100%;
+}
+
+#game > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.mound {
+    height: 100px;
+}
+
+.mole {
+    height: 100px;
+    margin-bottom: -50px;
+}
+
+#cursor {
+    position: fixed;
+    height: 100px;
+    pointer-events: none;
+}
