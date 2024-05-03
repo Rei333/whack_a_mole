@@ -45,6 +45,3 @@ function end_game() {
     document.getElementById("popup").innerText=`Tu as obtenu un score de ${score} !
     Rafraîchis la page pour rejouer :)`;
 }
-
-// pb de responsive
-// ajout d'un timer pour le temps restant ?
