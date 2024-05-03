@@ -12,7 +12,7 @@
         <aside>Score : <span id="score">0</span></aside>
 
         <main>
-            <div id="game" onclick="wrong_click()">
+            <div id="game" onclick="modify_score(-2)">
                 <div>
                     <img class="mound" src="mound.png" alt="monticule de terre">
                     <img class="mole" src="mole.png" alt="taupe" style="display: none" onclick="mole_clicked(0); event.stopPropagation()">
@@ -60,5 +60,13 @@
             </div>
             <img src="hammer.png" id="cursor" style="top:0; left:0">
         </main>
+
+        <div id="black_screen">
+            <div id="popup">
+                Tu as 60 secondes pour marquer le plus de points !<br>
+                Un clic sur une taupe te rapporte 1 point ; un clic ailleurs t'en fais perdre 2 !
+                <button onclick="begin_game()">Commencer</button>
+            </div>
+        </div>
     </body>
 </html>

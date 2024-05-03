@@ -1,28 +1,20 @@
-let score=document.getElementById("score");
+let counter=document.getElementById("score");
+let score=0;
+let play=false;
 
-function random_timer() {
-    return Math.floor(Math.random() * 2000);
+function begin_game() {
+    play=true;
+    setTimeout(display_random_mole, 3000);
+    setTimeout(end_game, 60000);
+    document.getElementById("black_screen").style.display="none";
 }
 
-function random() {
-    return Math.floor(Math.random() * 9);
-}
-
-function random_mole() {
-    document.getElementsByClassName("mole")[random()].style.display="initial";
-    setTimeout(random_mole, random_timer());
-}
-
-function read_score() {
-    return parseInt(score.textContent);
-}
-
-function modify_score(nbr) {
-    let new_score = read_score()+nbr;
-    if(new_score<0) {
-        score.innerHTML=0;
-    } else {
-        score.innerHTML=new_score;
+function display_random_mole() {
+    if(play) {
+        let mole = document.getElementsByClassName("mole")[Math.floor(Math.random() * 9)];
+        mole.style.display="initial";
+        setTimeout(display_random_mole, Math.floor(Math.random() * 2000));
+        setTimeout(function(){mole.style.display="none"}, 3000);
     }
 }
 
@@ -32,8 +24,13 @@ function mole_clicked(id) {
     mole.style.display="none";
 }
 
-function wrong_click() {
-    modify_score(-2);
+function modify_score(nbr) {
+    if(score+nbr<0) {
+        score=0;
+    } else {
+        score+=nbr;
+    }
+    counter.innerText=score;
 }
 
 function cursor(x, y) {
@@ -42,9 +39,12 @@ function cursor(x, y) {
     cursor.style.left=x-25+"px";
 }
 
-setTimeout(random_mole, 3000);
+function end_game() {
+    play=false;
+    document.getElementById("black_screen").style.display=null;
+    document.getElementById("popup").innerText=`Tu as obtenu un score de ${score} !
+    Rafraîchis la page pour rejouer :)`;
+}
 
 // pb de responsive
-// taupe apparaissent aleatoirement parmi les inactives
-// taupe qui se barre
-// fin de jeu
+// ajout d'un timer pour le temps restant ?
